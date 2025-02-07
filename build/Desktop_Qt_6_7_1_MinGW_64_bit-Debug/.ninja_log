@@ -1,0 +1,6 @@
+# ninja log v6
+35	121	7606410547170312	C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	6357268ebab607d5
+121	1738	7606410560272626	build.ninja	afa962a0beafa4ad
+114	221	7606410564828892	C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	6357268ebab607d5
+222	281	7606410565910825	CMakeFiles/clean.additional	baedbe210acaa455
+282	297	7606410566501311	clean	577b940aee94fbd7
