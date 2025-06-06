@@ -30,6 +30,11 @@
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-windres.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX-ABI.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake",
+		"C:/Users/User/Downloads/opencv/build/OpenCVConfig-version.cmake",
+		"C:/Users/User/Downloads/opencv/build/OpenCVConfig.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindPackageMessage.cmake",
+		"C:/Users/User/Downloads/opencv/build/OpenCVModules.cmake",
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake",
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake",
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake",
@@ -192,21 +197,11 @@
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginTargets.cmake",
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginTargets-relwithdebinfo.cmake",
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginAdditionalTargetInfo.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QICNSPluginConfig.cmake",
-		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QICNSPluginTargets.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QICNSPluginTargets-relwithdebinfo.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QICNSPluginAdditionalTargetInfo.cmake",
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginConfig.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginTargets.cmake",
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginTargets-relwithdebinfo.cmake",
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginAdditionalTargetInfo.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QInsightTrackerPluginConfig.cmake",
-		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QInsightTrackerPluginTargets.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QInsightTrackerPluginTargets-relwithdebinfo.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QInsightTrackerPluginAdditionalTargetInfo.cmake",
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QJpegPluginConfig.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets.cmake",
@@ -237,36 +232,11 @@
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginTargets.cmake",
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginTargets-relwithdebinfo.cmake",
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginAdditionalTargetInfo.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QTgaPluginConfig.cmake",
-		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets-relwithdebinfo.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QTgaPluginAdditionalTargetInfo.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QTiffPluginConfig.cmake",
-		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QTiffPluginTargets.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QTiffPluginTargets-relwithdebinfo.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QTiffPluginAdditionalTargetInfo.cmake",
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginConfig.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets.cmake",
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets-relwithdebinfo.cmake",
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginAdditionalTargetInfo.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginConfig.cmake",
-		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginTargets.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginTargets-relwithdebinfo.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginAdditionalTargetInfo.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QWbmpPluginConfig.cmake",
-		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QWbmpPluginTargets.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QWbmpPluginTargets-relwithdebinfo.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QWbmpPluginAdditionalTargetInfo.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QWebpPluginConfig.cmake",
-		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QWebpPluginTargets.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QWebpPluginTargets-relwithdebinfo.cmake",
-		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QWebpPluginAdditionalTargetInfo.cmake",
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginConfig.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginTargets.cmake",
@@ -299,6 +269,75 @@
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsVersionlessTargets.cmake",
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeParseArguments.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Sql/Qt6SqlConfigVersion.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Sql/Qt6SqlConfigVersionImpl.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Sql/Qt6SqlConfig.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Sql/Qt6SqlDependencies.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Sql/Qt6SqlTargets.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Sql/Qt6SqlTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Sql/Qt6SqlAdditionalTargetInfo.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Sql/Qt6SqlVersionlessTargets.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Sql/Qt6SqlPlugins.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginConfig.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginTargets.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginAdditionalTargetInfo.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginConfig.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginAdditionalTargetInfo.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfig.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginAdditionalTargetInfo.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfig.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginAdditionalTargetInfo.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersionImpl.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkVersionlessTargets.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkPlugins.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginConfig.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginTargets.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginAdditionalTargetInfo.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginConfig.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginTargets.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginAdditionalTargetInfo.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginConfig.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginAdditionalTargetInfo.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6SerialPort/Qt6SerialPortConfigVersion.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6SerialPort/Qt6SerialPortConfigVersionImpl.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6SerialPort/Qt6SerialPortConfig.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6SerialPort/Qt6SerialPortDependencies.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6SerialPort/Qt6SerialPortTargets.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6SerialPort/Qt6SerialPortTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6SerialPort/Qt6SerialPortAdditionalTargetInfo.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6SerialPort/Qt6SerialPortVersionlessTargets.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/GNUInstallDirs.cmake"
 	],
 	"CMAKE_SOURCE_DIR" : "C:/Users/User/Documents/qt-tcp-server",
@@ -308,9 +347,105 @@
 	"HEADERS" : 
 	[
 		[
-			"C:/Users/User/Documents/qt-tcp-server/mainwindow.h",
+			"C:/Users/User/Documents/qt-tcp-server/src/calibration/camera-calibration.h",
 			"MU",
-			"EWIEGA46WW/moc_mainwindow.cpp",
+			"FW43MB7WWK/moc_camera-calibration.cpp",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/clients/client.h",
+			"MU",
+			"4TENIYJOKW/moc_client.cpp",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/controllers/main-controller.h",
+			"MU",
+			"METKDVI4SS/moc_main-controller.cpp",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/database/database-manager.h",
+			"MU",
+			"M7KQ2GL7XF/moc_database-manager.cpp",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/datatypes/result.h",
+			"MU",
+			"ICQJEWWVHZ/moc_result.cpp",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/datatypes/user.h",
+			"MU",
+			"ICQJEWWVHZ/moc_user.cpp",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/serialport/serial-port-manager.h",
+			"MU",
+			"3ESHCVY57C/moc_serial-port-manager.cpp",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/servers/base-tcp-server/base-tcp-server.h",
+			"MU",
+			"IXDH7IOH5Q/moc_base-tcp-server.cpp",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/servers/camera-server/camera-server.h",
+			"MU",
+			"ALDADYYV76/moc_camera-server.cpp",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/servers/commands-server/commands-server.h",
+			"MU",
+			"L7BENV5DLJ/moc_commands-server.cpp",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/servers/sensor-server/sensor-server.h",
+			"MU",
+			"UQ2HWCMEIE/moc_sensor-server.cpp",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/servers/sound-server/sound-server.h",
+			"MU",
+			"EFH42SZFRE/moc_sound-server.cpp",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/utils/display-manager/display-manager.h",
+			"MU",
+			"6LW4XIZU5E/moc_display-manager.cpp",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/utils/globals-manager/globals-manager.h",
+			"MU",
+			"WVHQOII4ZT/moc_globals-manager.cpp",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/utils/json-parser/json-parser.h",
+			"MU",
+			"PPNM2Q6ZM4/moc_json-parser.cpp",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/widgets/results-widget/results-widget.h",
+			"MU",
+			"DEFMTM2HHZ/moc_results-widget.cpp",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/windows/main_window/mainwindow.h",
+			"MU",
+			"D5E6GMXVYR/moc_mainwindow.cpp",
 			null
 		]
 	],
@@ -323,6 +458,9 @@
 		"QT_CORE_LIB",
 		"QT_GUI_LIB",
 		"QT_NEEDS_QMAIN",
+		"QT_NETWORK_LIB",
+		"QT_SERIALPORT_LIB",
+		"QT_SQL_LIB",
 		"QT_WIDGETS_LIB",
 		"UNICODE",
 		"WIN32",
@@ -340,11 +478,33 @@
 	],
 	"MOC_INCLUDES" : 
 	[
+		"C:/Users/User/Documents/qt-tcp-server/src",
+		"C:/Users/User/Downloads/opencv/build",
+		"C:/Users/User/Downloads/opencv/sources/include",
+		"C:/Users/User/Downloads/opencv/sources/modules/core/include",
+		"C:/Users/User/Downloads/opencv/sources/modules/flann/include",
+		"C:/Users/User/Downloads/opencv/sources/modules/imgproc/include",
+		"C:/Users/User/Downloads/opencv/sources/modules/ml/include",
+		"C:/Users/User/Downloads/opencv/sources/modules/photo/include",
+		"C:/Users/User/Downloads/opencv/sources/modules/dnn/include",
+		"C:/Users/User/Downloads/opencv/sources/modules/features2d/include",
+		"C:/Users/User/Downloads/opencv/sources/modules/imgcodecs/include",
+		"C:/Users/User/Downloads/opencv/sources/modules/videoio/include",
+		"C:/Users/User/Downloads/opencv/sources/modules/calib3d/include",
+		"C:/Users/User/Downloads/opencv/sources/modules/highgui/include",
+		"C:/Users/User/Downloads/opencv/sources/modules/objdetect/include",
+		"C:/Users/User/Downloads/opencv/sources/modules/stitching/include",
+		"C:/Users/User/Downloads/opencv/sources/modules/ts/include",
+		"C:/Users/User/Downloads/opencv/sources/modules/video/include",
+		"C:/Users/User/Downloads/opencv/sources/modules/gapi/include",
 		"C:/Qt/6.7.1/mingw_64/include/QtCore",
 		"C:/Qt/6.7.1/mingw_64/include",
 		"C:/Qt/6.7.1/mingw_64/mkspecs/win32-g++",
 		"C:/Qt/6.7.1/mingw_64/include/QtWidgets",
 		"C:/Qt/6.7.1/mingw_64/include/QtGui",
+		"C:/Qt/6.7.1/mingw_64/include/QtSql",
+		"C:/Qt/6.7.1/mingw_64/include/QtNetwork",
+		"C:/Qt/6.7.1/mingw_64/include/QtSerialPort",
 		"C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++",
 		"C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32",
 		"C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward",
@@ -385,8 +545,62 @@
 	"SETTINGS_FILE" : "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/qt-tcp-server_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "C:/Users/User/Documents/qt-tcp-server/main.cpp", "MU", null ],
-		[ "C:/Users/User/Documents/qt-tcp-server/mainwindow.cpp", "MU", null ]
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/calibration/camera-calibration.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/controllers/main-controller.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/database/database-manager.cpp",
+			"MU",
+			null
+		],
+		[ "C:/Users/User/Documents/qt-tcp-server/src/main.cpp", "MU", null ],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/serialport/serial-port-manager.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/servers/base-tcp-server/base-tcp-server.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/servers/camera-server/camera-server.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/servers/sensor-server/sensor-server.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/utils/display-manager/display-manager.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/utils/json-parser/json-parser.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/widgets/results-widget/results-widget.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/windows/main_window/mainwindow.cpp",
+			"MU",
+			null
+		]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

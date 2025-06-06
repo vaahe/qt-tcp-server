@@ -1,0 +1,26 @@
+{
+	"BUILD_DIR" : "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/qt-tcp-server_autogen",
+	"CMAKE_BINARY_DIR" : "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/User/Documents/qt-tcp-server",
+	"CMAKE_SOURCE_DIR" : "C:/Users/User/Documents/qt-tcp-server",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/qt-tcp-server_autogen/include",
+	"INPUTS" : 
+	[
+		"C:/Users/User/Documents/qt-tcp-server/resources/images/background1.png",
+		"C:/Users/User/Documents/qt-tcp-server/resources/data/calibration_results.xml"
+	],
+	"LOCK_FILE" : "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/CMakeFiles/qt-tcp-server_autogen.dir/AutoRcc_application_3YJK5W5UP7_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--no-zstd", "-name", "application" ],
+	"OUTPUT_CHECKSUM" : "3YJK5W5UP7",
+	"OUTPUT_NAME" : "qrc_application.cpp",
+	"RCC_EXECUTABLE" : "C:/Qt/6.7.1/mingw_64/./bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/CMakeFiles/qt-tcp-server_autogen.dir/AutoRcc_application_3YJK5W5UP7_Used.txt",
+	"SOURCE" : "C:/Users/User/Documents/qt-tcp-server/resources/application.qrc",
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}

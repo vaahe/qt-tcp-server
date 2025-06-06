@@ -42,8 +42,38 @@ endif()
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/User/Documents/qt-tcp-server/*.cpp")
 set(OLD_GLOB
   "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CompilerIdCXX/CMakeCXXCompilerId.cpp"
-  "C:/Users/User/Documents/qt-tcp-server/main.cpp"
-  "C:/Users/User/Documents/qt-tcp-server/mainwindow.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/qt-tcp-server_autogen/2TNPWO42NJ/moc_authwindow.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/qt-tcp-server_autogen/3ESHCVY57C/moc_serial-port-manager.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/qt-tcp-server_autogen/3LXPKN4LCA/moc_mainwindow.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/qt-tcp-server_autogen/4TENIYJOKW/moc_camera-client.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/qt-tcp-server_autogen/4TENIYJOKW/moc_client.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/qt-tcp-server_autogen/ALDADYYV76/moc_camera-server.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/qt-tcp-server_autogen/D5E6GMXVYR/moc_mainwindow.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/qt-tcp-server_autogen/DEFMTM2HHZ/moc_results-widget.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/qt-tcp-server_autogen/EFH42SZFRE/moc_sound-server.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/qt-tcp-server_autogen/FW43MB7WWK/moc_camera-calibration.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/qt-tcp-server_autogen/IXDH7IOH5Q/moc_base-tcp-server.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/qt-tcp-server_autogen/L7BENV5DLJ/moc_commands-server.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/qt-tcp-server_autogen/M7KQ2GL7XF/moc_database-manager.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/qt-tcp-server_autogen/M7KQ2GL7XF/moc_databasemanager.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/qt-tcp-server_autogen/METKDVI4SS/moc_main-controller.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/qt-tcp-server_autogen/METKDVI4SS/moc_maincontroller.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/qt-tcp-server_autogen/PPNM2Q6ZM4/moc_json-parser.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/qt-tcp-server_autogen/UQ2HWCMEIE/moc_sensor-server.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/qt-tcp-server_autogen/WVHQOII4ZT/moc_globals-manager.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/qt-tcp-server_autogen/mocs_compilation.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/src/calibration/camera-calibration.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/src/controllers/main-controller.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/src/database/database-manager.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/src/main.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/src/serialport/serial-port-manager.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/src/servers/base-tcp-server/base-tcp-server.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/src/servers/camera-server/camera-server.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/src/servers/sensor-server/sensor-server.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/src/utils/display-manager/display-manager.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/src/utils/json-parser/json-parser.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/src/widgets/results-widget/results-widget.cpp"
+  "C:/Users/User/Documents/qt-tcp-server/src/windows/main_window/mainwindow.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -62,9 +92,26 @@ endif()
 # _directory_contents at C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:55 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/User/Documents/qt-tcp-server/*.h")
 set(OLD_GLOB
+  "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/qt-tcp-server_autogen/include/ui_authwindow.h"
   "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/qt-tcp-server_autogen/include/ui_mainwindow.h"
   "C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/qt-tcp-server_autogen/moc_predefs.h"
-  "C:/Users/User/Documents/qt-tcp-server/mainwindow.h"
+  "C:/Users/User/Documents/qt-tcp-server/src/calibration/camera-calibration.h"
+  "C:/Users/User/Documents/qt-tcp-server/src/clients/client.h"
+  "C:/Users/User/Documents/qt-tcp-server/src/controllers/main-controller.h"
+  "C:/Users/User/Documents/qt-tcp-server/src/database/database-manager.h"
+  "C:/Users/User/Documents/qt-tcp-server/src/datatypes/result.h"
+  "C:/Users/User/Documents/qt-tcp-server/src/datatypes/user.h"
+  "C:/Users/User/Documents/qt-tcp-server/src/serialport/serial-port-manager.h"
+  "C:/Users/User/Documents/qt-tcp-server/src/servers/base-tcp-server/base-tcp-server.h"
+  "C:/Users/User/Documents/qt-tcp-server/src/servers/camera-server/camera-server.h"
+  "C:/Users/User/Documents/qt-tcp-server/src/servers/commands-server/commands-server.h"
+  "C:/Users/User/Documents/qt-tcp-server/src/servers/sensor-server/sensor-server.h"
+  "C:/Users/User/Documents/qt-tcp-server/src/servers/sound-server/sound-server.h"
+  "C:/Users/User/Documents/qt-tcp-server/src/utils/display-manager/display-manager.h"
+  "C:/Users/User/Documents/qt-tcp-server/src/utils/globals-manager/globals-manager.h"
+  "C:/Users/User/Documents/qt-tcp-server/src/utils/json-parser/json-parser.h"
+  "C:/Users/User/Documents/qt-tcp-server/src/widgets/results-widget/results-widget.h"
+  "C:/Users/User/Documents/qt-tcp-server/src/windows/main_window/mainwindow.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -164,7 +211,7 @@ endif()
 # _directory_contents at C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:55 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/User/Documents/qt-tcp-server/*.ui")
 set(OLD_GLOB
-  "C:/Users/User/Documents/qt-tcp-server/mainwindow.ui"
+  "C:/Users/User/Documents/qt-tcp-server/src/windows/main_window/mainwindow.ui"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

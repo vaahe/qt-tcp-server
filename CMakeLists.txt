@@ -1,60 +1,128 @@
 cmake_minimum_required(VERSION 3.16)
-
 project(qt-tcp-server VERSION 0.1 LANGUAGES CXX)
-
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
+# Enable Qt automoc/uic/rcc
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
 
-set(TS_FILES qt-tcp-server_en_US.ts)
+# Tell CMake where to find OpenCVConfig.cmake
+set(OpenCV_DIR "C:/Users/User/Downloads/opencv/build")
+find_package(OpenCV 4.8 REQUIRED)
 
-set(PROJECT_SOURCES
-        main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
-        ${TS_FILES}
+# Find Qt modules
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS
+    Widgets LinguistTools Sql Network SerialPort
+)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS
+    Widgets LinguistTools Sql Network SerialPort
 )
 
-if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(qt-tcp-server
-        MANUAL_FINALIZATION
+# List all your sources here
+set(PROJECT_SOURCES
+    src/main.cpp
+
+    src/windows/main_window/mainwindow.cpp
+    src/windows/main_window/mainwindow.h
+    src/windows/main_window/mainwindow.ui
+
+    src/database/database-manager.cpp
+    src/database/database-manager.h
+
+    src/datatypes/user.h
+    src/datatypes/result.h
+
+    src/controllers/main-controller.cpp
+    src/controllers/main-controller.h
+
+    src/servers/base-tcp-server/base-tcp-server.cpp
+    src/servers/base-tcp-server/base-tcp-server.h
+
+    src/servers/sound-server/sound-server.h
+
+    src/servers/commands-server/commands-server.h
+    src/servers/commands-server/command-server.cpp
+
+    src/servers/sensor-server/sensor-server.h
+    src/servers/sensor-server/sensor-server.cpp
+
+    src/servers/coordinates-server/coordinates-server.h
+    src/servers/coordinates-server/coordinates-server.cpp
+
+    src/serialport/serial-port-manager.cpp
+    src/serialport/serial-port-manager.h
+
+    src/utils/json-parser/json-parser.cpp
+    src/utils/json-parser/json-parser.h
+    src/utils/globals-manager/globals-manager.h
+
+    src/widgets/results-widget/results-widget.cpp
+    src/widgets/results-widget/results-widget.h
+    src/widgets/debug-widget/debug-widget.h
+    src/widgets/debug-widget/debug-widget.cpp
+
+    src/calibration/camera-calibration.cpp
+    src/calibration/camera-calibration.h
+
+    src/utils/display-manager/display-manager.h
+    src/utils/display-manager/display-manager.cpp
+
+    src/clients/client.h
+
+    src/clients/http-client/http-client.h
+    src/clients/http-client/http-client.cpp
+
+    src/processing/frame-processor.h
+    src/processing/frame-processor.cpp
+
+    resources/application.qrc
+    qt-tcp-server_en_US.ts
+)
+
+# 1) Declare the executable
+if (QT_VERSION_MAJOR GREATER_EQUAL 6)
+    qt_add_executable(qt-tcp-server MANUAL_FINALIZATION ${PROJECT_SOURCES}
+        src/models/division/Division.h
+        src/models/military-unit/MilitaryUnit.h
+        src/models/result/Result.h
+        src/models/subdivision/Subdivision.h
+        src/models/user/User.h)
+else()
+    add_executable(qt-tcp-server
         ${PROJECT_SOURCES}
     )
-# Define target properties for Android with Qt 6 as:
-#    set_property(TARGET qt-tcp-server APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
-#                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
-# For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
-
-    qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
-else()
-    if(ANDROID)
-        add_library(qt-tcp-server SHARED
-            ${PROJECT_SOURCES}
-        )
-# Define properties for Android with Qt 5 after find_package() calls as:
-#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
-    else()
-        add_executable(qt-tcp-server
-            ${PROJECT_SOURCES}
-        )
-    endif()
-
-    qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 endif()
 
-target_link_libraries(qt-tcp-server PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+# 2) Include directories (OpenCV, plus your src/)
+target_include_directories(qt-tcp-server
+    PRIVATE
+        ${OpenCV_INCLUDE_DIRS}
+        ${CMAKE_SOURCE_DIR}/src
+)
 
-# Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
-# If you are developing for iOS or macOS you should consider setting an
-# explicit, fixed bundle identifier manually though.
-if(${QT_VERSION} VERSION_LESS 6.1.0)
+# 3) Link against Qt and OpenCV
+target_link_libraries(qt-tcp-server
+    PRIVATE
+        ${OpenCV_LIBS}
+        Qt${QT_VERSION_MAJOR}::Widgets
+        Qt${QT_VERSION_MAJOR}::Sql
+        Qt${QT_VERSION_MAJOR}::Network
+        Qt${QT_VERSION_MAJOR}::SerialPort
+)
+
+# 4) Translations
+if (QT_VERSION_MAJOR GREATER_EQUAL 6)
+    qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} qt-tcp-server_en_US.ts)
+    qt_finalize_executable(qt-tcp-server)
+else()
+    qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} qt-tcp-server_en_US.ts)
+endif()
+
+# 5) Bundle settings and install rules (as before)
+if (${QT_VERSION} VERSION_LESS 6.1.0)
   set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.qt-tcp-server)
 endif()
 set_target_properties(qt-tcp-server PROPERTIES
@@ -71,7 +139,3 @@ install(TARGETS qt-tcp-server
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
-
-if(QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(qt-tcp-server)
-endif()
