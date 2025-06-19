@@ -1,5 +1,6 @@
 C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/qt-tcp-server_autogen/M7KQ2GL7XF/moc_database-manager.cpp: C:/Users/User/Documents/qt-tcp-server/src/database/database-manager.h \
   C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/qt-tcp-server_autogen/moc_predefs.h \
+  C:/Qt/6.7.1/mingw_64/include/QtCore/QDate \
   C:/Qt/6.7.1/mingw_64/include/QtCore/QDir \
   C:/Qt/6.7.1/mingw_64/include/QtCore/QJsonArray \
   C:/Qt/6.7.1/mingw_64/include/QtCore/QJsonDocument \

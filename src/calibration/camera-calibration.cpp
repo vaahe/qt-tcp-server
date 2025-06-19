@@ -34,7 +34,6 @@ bool compareXX(const std::vector<cv::Point>& a, const std::vector<cv::Point>& b)
 }
 
 void CameraCalibration::startCalibration() {
-    qDebug() << "line 37";
     openCamera();
 
     if (!m_cap.isOpened()) {
@@ -42,11 +41,10 @@ void CameraCalibration::startCalibration() {
         return;
     }
 
-    qDebug() << "Calibration started";
-
     const std::filesystem::path calibrationFilePath = ":data/data/calibration_results.xml";
     loadCalibrationData(calibrationFilePath);
 
+    emit calibrationStarted();
     while (!m_pointsCaptured) {
         cv::Mat frame, undistortedFrame;
         m_cap >> frame;
@@ -57,7 +55,6 @@ void CameraCalibration::startCalibration() {
         }
 
         m_httpClient->applyCalibrationSettings();
-        emit calibrationStarted();
         cv::undistort(frame, undistortedFrame, m_cameraMatrix, m_distortionCoefficients);
         processFrame(undistortedFrame);
 
@@ -83,7 +80,7 @@ void CameraCalibration::openCamera() {
         return;
     }
 
-    bool isConnected = m_cap.open("rtsp://admin:123456789m@192.168.1.64:554/Streaming/Channels/102");
+    bool isConnected = m_cap.open("rtsp://admin:123456789m@ 192.168.1.64:554/Streaming/Channels/102");
 
     if (!isConnected || !m_cap.isOpened()) {
         qDebug() << "Error: Couldn't open camera. Please check the connection or the RTSP URL.";

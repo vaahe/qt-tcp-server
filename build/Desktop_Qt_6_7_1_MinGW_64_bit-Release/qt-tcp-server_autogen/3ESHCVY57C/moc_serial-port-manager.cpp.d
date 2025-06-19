@@ -1,14 +1,18 @@
 C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/qt-tcp-server_autogen/3ESHCVY57C/moc_serial-port-manager.cpp: C:/Users/User/Documents/qt-tcp-server/src/serialport/serial-port-manager.h \
   C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/qt-tcp-server_autogen/moc_predefs.h \
+  C:/Qt/6.7.1/mingw_64/include/QtCore/QDate \
   C:/Qt/6.7.1/mingw_64/include/QtCore/QDebug \
+  C:/Qt/6.7.1/mingw_64/include/QtCore/QDir \
   C:/Qt/6.7.1/mingw_64/include/QtCore/QFile \
   C:/Qt/6.7.1/mingw_64/include/QtCore/QJsonArray \
   C:/Qt/6.7.1/mingw_64/include/QtCore/QJsonDocument \
   C:/Qt/6.7.1/mingw_64/include/QtCore/QJsonObject \
+  C:/Qt/6.7.1/mingw_64/include/QtCore/QList \
   C:/Qt/6.7.1/mingw_64/include/QtCore/QObject \
   C:/Qt/6.7.1/mingw_64/include/QtCore/QString \
   C:/Qt/6.7.1/mingw_64/include/QtCore/QStringList \
   C:/Qt/6.7.1/mingw_64/include/QtCore/QTextStream \
+  C:/Qt/6.7.1/mingw_64/include/QtCore/QUuid \
   C:/Qt/6.7.1/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.7.1/mingw_64/include/QtCore/q20memory.h \
   C:/Qt/6.7.1/mingw_64/include/QtCore/q20type_traits.h \
@@ -45,10 +49,12 @@ C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Releas
   C:/Qt/6.7.1/mingw_64/include/QtCore/qdatastream.h \
   C:/Qt/6.7.1/mingw_64/include/QtCore/qdatetime.h \
   C:/Qt/6.7.1/mingw_64/include/QtCore/qdebug.h \
+  C:/Qt/6.7.1/mingw_64/include/QtCore/qdir.h \
   C:/Qt/6.7.1/mingw_64/include/QtCore/qendian.h \
   C:/Qt/6.7.1/mingw_64/include/QtCore/qexceptionhandling.h \
   C:/Qt/6.7.1/mingw_64/include/QtCore/qfile.h \
   C:/Qt/6.7.1/mingw_64/include/QtCore/qfiledevice.h \
+  C:/Qt/6.7.1/mingw_64/include/QtCore/qfileinfo.h \
   C:/Qt/6.7.1/mingw_64/include/QtCore/qflags.h \
   C:/Qt/6.7.1/mingw_64/include/QtCore/qfloat16.h \
   C:/Qt/6.7.1/mingw_64/include/QtCore/qforeach.h \
@@ -120,6 +126,7 @@ C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Releas
   C:/Qt/6.7.1/mingw_64/include/QtCore/qtdeprecationmarkers.h \
   C:/Qt/6.7.1/mingw_64/include/QtCore/qtenvironmentvariables.h \
   C:/Qt/6.7.1/mingw_64/include/QtCore/qtextstream.h \
+  C:/Qt/6.7.1/mingw_64/include/QtCore/qtimezone.h \
   C:/Qt/6.7.1/mingw_64/include/QtCore/qtmetamacros.h \
   C:/Qt/6.7.1/mingw_64/include/QtCore/qtnoop.h \
   C:/Qt/6.7.1/mingw_64/include/QtCore/qtpreprocessorsupport.h \
@@ -151,6 +158,17 @@ C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Releas
   C:/Qt/6.7.1/mingw_64/include/QtSerialPort/qserialportglobal.h \
   C:/Qt/6.7.1/mingw_64/include/QtSerialPort/qserialportinfo.h \
   C:/Qt/6.7.1/mingw_64/include/QtSerialPort/qtserialportexports.h \
+  C:/Qt/6.7.1/mingw_64/include/QtSql/QSqlDatabase \
+  C:/Qt/6.7.1/mingw_64/include/QtSql/QSqlError \
+  C:/Qt/6.7.1/mingw_64/include/QtSql/QSqlQuery \
+  C:/Qt/6.7.1/mingw_64/include/QtSql/QSqlRecord \
+  C:/Qt/6.7.1/mingw_64/include/QtSql/qsqldatabase.h \
+  C:/Qt/6.7.1/mingw_64/include/QtSql/qsqlerror.h \
+  C:/Qt/6.7.1/mingw_64/include/QtSql/qsqlquery.h \
+  C:/Qt/6.7.1/mingw_64/include/QtSql/qsqlrecord.h \
+  C:/Qt/6.7.1/mingw_64/include/QtSql/qtsql-config.h \
+  C:/Qt/6.7.1/mingw_64/include/QtSql/qtsqlexports.h \
+  C:/Qt/6.7.1/mingw_64/include/QtSql/qtsqlglobal.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed/limits.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed/syslimits.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/algorithm \
@@ -391,6 +409,12 @@ C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Releas
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h \
   C:/Users/User/Documents/qt-tcp-server/src/clients/client.h \
+  C:/Users/User/Documents/qt-tcp-server/src/database/database-manager.h \
+  C:/Users/User/Documents/qt-tcp-server/src/models/division/Division.h \
+  C:/Users/User/Documents/qt-tcp-server/src/models/military-unit/MilitaryUnit.h \
+  C:/Users/User/Documents/qt-tcp-server/src/models/result/Result.h \
+  C:/Users/User/Documents/qt-tcp-server/src/models/subdivision/Subdivision.h \
+  C:/Users/User/Documents/qt-tcp-server/src/models/user/User.h \
   C:/Users/User/Documents/qt-tcp-server/src/utils/globals-manager/globals-manager.h \
   C:/Users/User/Documents/qt-tcp-server/src/utils/json-parser/json-parser.h \
   C:/Users/User/Downloads/opencv/build/opencv2/opencv_modules.hpp \

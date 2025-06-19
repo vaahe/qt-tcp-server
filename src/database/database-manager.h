@@ -51,13 +51,16 @@ public:
 
 public:
     bool isConnected() const;
-    bool signUp(const SignUpData& signUpData);
     bool insertResult(const Result& result);
-    bool createTable(const QString& tableName, const QString& tableDefinition);
+    bool signUp(QString fullName, QString rank, QString position, QString subdivision_id);
+
+    bool createDivision(const QString divisionName, const QString militaryUnitId);
+    bool createSubdivision(const QString subdivisionName, const QString divisionId);
+    bool createMilitaryUnit(const QString militaryUnitNumber);
 
     void seedMockData();
-    bool exportDataToCSV(const QString& filePath, const QueryFilter& filter = QueryFilter());
-    void exportDataToJson(const QString &filePath);
+    // bool exportDataToCSV(const QString& filePath, const QueryFilter& filter = QueryFilter());
+    void exportDataToJson(const QString &filePath = "C:/Ak-74Utilities/Data/MainData.json");
 
     QSqlQuery getResults(const QueryFilter& filter);
     QSqlQuery getDivisions();
@@ -69,6 +72,7 @@ public:
     void createDivisionsTable();
     void createSubdivisionsTable();
     void createMilitaryUnitsTable();
+    bool createTable(const QString& tableName, const QString& tableDefinition);
 
 private:
     DatabaseManager();

@@ -222,6 +222,11 @@ void DatabaseManager::seedMockData() {
 }
 
 void DatabaseManager::exportDataToJson(const QString &filePath) {
+    QDir dir(QFileInfo(filePath).absolutePath());
+    if (!dir.exists()) {
+        dir.mkpath(".");
+    }
+
     // Enable foreign keys (just once per connection)
     {
         QSqlQuery pragmaQuery;
@@ -405,15 +410,17 @@ void DatabaseManager::exportDataToJson(const QString &filePath) {
 
 }
 
-bool DatabaseManager::signUp(const SignUpData& signUpData) {
+bool DatabaseManager::signUp(QString fullName, QString rank, QString position, QString subdivision_id) {
     QSqlQuery query;
-    const QString queryStr = "INSERT INTO users VALUES (:full_name, :rank, :position, :subdivision_id)";
-    query.bindValue(":full_name", signUpData.fullName);
-    query.bindValue(":rank", signUpData.rank);
-    query.bindValue(":position", signUpData.position);
-    query.bindValue("subdivision_id", signUpData.subDivisionId);
+    const QString queryStr = "INSERT INTO users(full_name, rank, position, subdivision_id) VALUES (:full_name, :rank, :position, :subdivision_id)";
+    query.prepare(queryStr);
 
-    if (!query.exec(queryStr)) {
+    query.bindValue(":full_name", fullName);
+    query.bindValue(":rank", rank);
+    query.bindValue(":position", position);
+    query.bindValue(":subdivision_id", subdivision_id);
+
+    if (!query.exec()) {
         qDebug() << "Error while signing up:" << query.lastError().text();
         return false;
     }
@@ -421,51 +428,92 @@ bool DatabaseManager::signUp(const SignUpData& signUpData) {
     return true;
 }
 
-bool DatabaseManager::exportDataToCSV(const QString filePath, const QueryFilter& filter) {
-    QSqlQuery query = this->getResults(filter);
-    if (query.lastError().isValid()) {
-        qDebug() << "[ERROR] exportDataToCSV: failed to fetch filtered data:"
-                 << query.lastError().text();
+// bool DatabaseManager::exportDataToCSV(const QString filePath, const QueryFilter& filter) {
+//     QSqlQuery query = this->getResults(filter);
+//     if (query.lastError().isValid()) {
+//         qDebug() << "[ERROR] exportDataToCSV: failed to fetch filtered data:"
+//                  << query.lastError().text();
+//         return false;
+//     }
+
+//     // 2) Open (or create/truncate) the output file
+//     QFile file(filePath);
+//     if (!file.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text)) {
+//         qDebug() << "[ERROR] exportDataToCSV: cannot open file for writing:"
+//                  << filePath;
+//         return false;
+//     }
+//     QTextStream out(&file);
+
+//     // 3) Write the CSV header
+//     //    These column names must match the SELECT in getResults():
+//     //    (r.id AS result_id, r.user_id AS user_id, r.date, r.grade, r.screenshots)
+//     out << "result_id,user_id,date,grade,screenshots\n";
+
+//     // 4) Loop through each row and write one CSV line
+//     while (query.next()) {
+//         int     resultId    = query.value("result_id").toInt();
+//         int     userId      = query.value("user_id").toInt();
+//         QString dateStr     = query.value("date").toString();        // "YYYY-MM-DD"
+//         int     grade       = query.value("grade").toInt();
+//         QString screenshots = query.value("screenshots").toString(); // e.g. '["s1.png","s2.png"]'
+
+//         // 4a) Escape the TEXT fields
+//         //     - date is safe as “YYYY-MM-DD” but we’ll quote it for consistency
+//         QString dateField   = escapeForCsv(dateStr);
+//         QString shotsField  = escapeForCsv(screenshots);
+
+//         // 4b) Write comma-separated values
+//         out
+//             << resultId   << ","
+//             << userId     << ","
+//             << dateField  << ","
+//             << grade      << ","
+//             << shotsField << "\n";
+//     }
+
+//     file.close();
+//     qDebug() << "[DEBUG] exportDataToCSV: Successfully wrote CSV to" << filePath;
+//     return true;
+// }
+
+bool DatabaseManager::createMilitaryUnit(const QString militaryUnitNumber) {
+    QSqlQuery query;
+    query.prepare("INSERT INTO military_units(number) VALUES (:number)");
+    query.bindValue(":number", militaryUnitNumber);
+
+    if (!query.exec()) {
+        qDebug() << "Error inserting military unit:" << query.lastError().text();
         return false;
     }
 
-    // 2) Open (or create/truncate) the output file
-    QFile file(filePath);
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text)) {
-        qDebug() << "[ERROR] exportDataToCSV: cannot open file for writing:"
-                 << filePath;
+    return true;
+}
+
+bool DatabaseManager::createDivision(const QString divisionName, const QString militaryUnitId) {
+    QSqlQuery query;
+    query.prepare("INSERT INTO divisions(name, military_unit_id) VALUES (:name, :military_unit_id)");
+    query.bindValue(":name", divisionName);
+    query.bindValue(":military_unit_id", militaryUnitId);
+
+    if (!query.exec()) {
+        qDebug() << "Error inserting division:" << query.lastError().text();
         return false;
     }
-    QTextStream out(&file);
 
-    // 3) Write the CSV header
-    //    These column names must match the SELECT in getResults():
-    //    (r.id AS result_id, r.user_id AS user_id, r.date, r.grade, r.screenshots)
-    out << "result_id,user_id,date,grade,screenshots\n";
+    return true;
+}
 
-    // 4) Loop through each row and write one CSV line
-    while (query.next()) {
-        int     resultId    = query.value("result_id").toInt();
-        int     userId      = query.value("user_id").toInt();
-        QString dateStr     = query.value("date").toString();        // "YYYY-MM-DD"
-        int     grade       = query.value("grade").toInt();
-        QString screenshots = query.value("screenshots").toString(); // e.g. '["s1.png","s2.png"]'
+bool DatabaseManager::createSubdivision(const QString subdivisionName, const QString divisionId) {
+    QSqlQuery query;
+    query.prepare("INSERT INTO subdivisions(name, division_id) VALUES (:name, :division_id)");
+    query.bindValue(":name", subdivisionName);
+    query.bindValue(":division_id", divisionId);
 
-        // 4a) Escape the TEXT fields
-        //     - date is safe as “YYYY-MM-DD” but we’ll quote it for consistency
-        QString dateField   = escapeForCsv(dateStr);
-        QString shotsField  = escapeForCsv(screenshots);
-
-        // 4b) Write comma-separated values
-        out
-            << resultId   << ","
-            << userId     << ","
-            << dateField  << ","
-            << grade      << ","
-            << shotsField << "\n";
+    if (!query.exec()) {
+        qDebug() << "Error inserting subdivision:" << query.lastError().text();
+        return false;
     }
 
-    file.close();
-    qDebug() << "[DEBUG] exportDataToCSV: Successfully wrote CSV to" << filePath;
     return true;
 }

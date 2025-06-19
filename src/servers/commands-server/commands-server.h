@@ -7,8 +7,10 @@
 #include "clients/http-client/http-client.h"
 #include "servers/base-tcp-server/base-tcp-server.h"
 
-#include <QApplication>
+#include <QFile>
 #include <QThread>
+#include <functional>
+#include <QApplication>
 
 class CommandsServer : public BaseTcpServer
 {
@@ -23,10 +25,15 @@ protected:
     void startProcessing(QTcpSocket* client);
     void startCalibration(QTcpSocket* client);
     void printResults(const QString filters);
+    void signUp();
+    void createMilitaryUnit();
     void closeProcess();
+    void createDivision();
+    void createSubdivision();
 
 private:
-    DatabaseManager &m_dbManager = DatabaseManager::getInstance();
+    DatabaseManager &m_dbManager;
+    QHash<QString, std::function<void(QTcpSocket*)>> m_commands;
 };
 
 #endif // COMMANDS_SERVER_H

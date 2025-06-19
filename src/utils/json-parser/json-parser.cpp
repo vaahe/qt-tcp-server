@@ -75,59 +75,59 @@ bool JsonParser::writeJsonToFile(const QString &filePath,
 }
 
 
-DatabaseManager::QueryFilter JsonParser::parseQueryFilter(const QString &filePath) {
-    DatabaseManager::QueryFilter filter;
+// DatabaseManager::QueryFilter JsonParser::parseQueryFilter(const QString &filePath) {
+//     DatabaseManager::QueryFilter filter;
 
-    QFile file(filePath);
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        qDebug() << "[ERROR] parseQueryFilterFromJson: cannot open file:" << filePath;
-        return filter; // all fields remain -1
-    }
+//     QFile file(filePath);
+//     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+//         qDebug() << "[ERROR] parseQueryFilterFromJson: cannot open file:" << filePath;
+//         return filter; // all fields remain -1
+//     }
 
-    QByteArray raw = file.readAll();
-    file.close();
+//     QByteArray raw = file.readAll();
+//     file.close();
 
-    QJsonParseError parseError;
-    QJsonDocument doc = QJsonDocument::fromJson(raw, &parseError);
-    if (parseError.error != QJsonParseError::NoError) {
-        qDebug() << "[ERROR] parseQueryFilterFromJson: JSON parse failed:" << parseError.errorString();
-        return filter;
-    }
+//     QJsonParseError parseError;
+//     QJsonDocument doc = QJsonDocument::fromJson(raw, &parseError);
+//     if (parseError.error != QJsonParseError::NoError) {
+//         qDebug() << "[ERROR] parseQueryFilterFromJson: JSON parse failed:" << parseError.errorString();
+//         return filter;
+//     }
 
-    if (!doc.isObject()) {
-        qDebug() << "[ERROR] parseQueryFilterFromJson: JSON root is not an object";
-        return filter;
-    }
+//     if (!doc.isObject()) {
+//         qDebug() << "[ERROR] parseQueryFilterFromJson: JSON root is not an object";
+//         return filter;
+//     }
 
-    QJsonObject obj = doc.object();
+//     QJsonObject obj = doc.object();
 
-    if (obj.contains("military_unit_id") && obj.value("military_unit_id").isDouble()) {
-        int muid = obj.value("military_unit_id").toInt(-1);
-        if (muid >= 0) filter.militaryUnitId = muid;
-    }
+//     if (obj.contains("military_unit_id") && obj.value("military_unit_id").isDouble()) {
+//         int muid = obj.value("military_unit_id").toInt(-1);
+//         if (muid >= 0) filter.militaryUnitId = muid;
+//     }
 
-    if (obj.contains("division_id") && obj.value("division_id").isDouble()) {
-        int did = obj.value("division_id").toInt(-1);
-        if (did >= 0) filter.divisionId = did;
-    }
+//     if (obj.contains("division_id") && obj.value("division_id").isDouble()) {
+//         int did = obj.value("division_id").toInt(-1);
+//         if (did >= 0) filter.divisionId = did;
+//     }
 
-    if (obj.contains("subdivision_id") && obj.value("subdivision_id").isDouble()) {
-        int sid = obj.value("subdivision_id").toInt(-1);
-        if (sid >= 0) filter.subdivisionId = sid;
-    }
+//     if (obj.contains("subdivision_id") && obj.value("subdivision_id").isDouble()) {
+//         int sid = obj.value("subdivision_id").toInt(-1);
+//         if (sid >= 0) filter.subdivisionId = sid;
+//     }
 
-    if (obj.contains("user_id") && obj.value("user_id").isDouble()) {
-        int uid = obj.value("user_id").toInt(-1);
-        if (uid >= 0) filter.userId = uid;
-    }
+//     if (obj.contains("user_id") && obj.value("user_id").isDouble()) {
+//         int uid = obj.value("user_id").toInt(-1);
+//         if (uid >= 0) filter.userId = uid;
+//     }
 
-    if (obj.contains("date_from") && obj.contains("date_to")) {
-        const QDate dateTo = obj.value("data_to");
-        const QDate dateFrom = obj.value("date_from");
+//     if (obj.contains("date_from") && obj.contains("date_to")) {
+//         const QDate dateTo = obj.value("data_to");
+//         const QDate dateFrom = obj.value("date_from");
 
-        filter.dateTo = dateTo;
-        filter.dateFrom = dateFrom;
-    }
+//         filter.dateTo = dateTo;
+//         filter.dateFrom = dateFrom;
+//     }
 
-    return filter;
-}
+//     return filter;
+// }

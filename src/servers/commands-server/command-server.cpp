@@ -2,8 +2,18 @@
 #include <QDebug>
 
 CommandsServer::CommandsServer(quint16 port, QObject* parent) :
-    BaseTcpServer(port, parent)
+    BaseTcpServer(port, parent), m_dbManager(DatabaseManager::getInstance())
 {
+    m_commands = {
+                  {"sign_up",            [this](QTcpSocket*)   { signUp(); }},
+                  {"close_process",      [this](QTcpSocket*)   { closeProcess(); }},
+                  {"create_division",    [this](QTcpSocket*)   { createDivision(); }},
+                  {"create_subdivision", [this](QTcpSocket*)   { createSubdivision(); }},
+                  {"create_mil_unit",    [this](QTcpSocket*)   { createMilitaryUnit(); }},
+                  {"start_processing",   [this](QTcpSocket* c) { startProcessing(c); }},
+                  {"start_calibration",  [this](QTcpSocket* c) { startCalibration(c); }},
+                };
+
     QObject::connect(this, &CommandsServer::dataReceived, this, &CommandsServer::onDataReceived);
 
     if (!connect()) {
@@ -14,20 +24,14 @@ CommandsServer::CommandsServer(quint16 port, QObject* parent) :
 CommandsServer::~CommandsServer() {}
 
 void CommandsServer::onDataReceived(QTcpSocket* client, const QByteArray& data) {
-    const QString cmd = QString::fromUtf8(data).trimmed();
+    const QString cmd = QString::fromUtf8(data).trimmed().toLower();
     qDebug() << "[CommandsServer] Received from" << client->peerAddress().toString() << ":" << cmd;
 
-    if (cmd.compare("start calibration", Qt::CaseInsensitive) == 0) {
-        startCalibration(client);
-    } else if (cmd.compare("start processing", Qt::CaseInsensitive) == 0) {
-        startProcessing(client);
-    } else if (cmd.compare("closeProcess", Qt::CaseInsensitive) == 0) {
-        closeProcess();
-    } else if (cmd.startsWith("print")) {
-        const QString filters = cmd.split('-')[1];
-        qDebug() << filters;
+    auto it = m_commands.find(cmd);
+    if (it != m_commands.end()) {
+        it.value()(client);
     } else {
-        return;
+        send(client, "Unknown command\n");
     }
 }
 
@@ -79,8 +83,114 @@ void CommandsServer::closeProcess() {
     QApplication::quit();
 }
 
-// "closeProcess"
+void CommandsServer::signUp() {
+    QFile file("C:/Ak-74Utilities/Data/SignUpData.json");
 
-void CommandsServer::printResults(const QString filters) {
-    m_dbManager
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qWarning() << "Failed to open JSON file:" << file.errorString();
+        return;
+    }
+
+    QByteArray jsonData = file.readAll();
+    file.close();
+
+    QJsonParseError parseError;
+    QJsonDocument doc = QJsonDocument::fromJson(jsonData, &parseError);
+
+    if (doc.isNull() || !doc.isObject()) {
+        qWarning() << "Invalid JSON format:" << parseError.errorString();
+        return;
+    }
+
+    QJsonObject obj = doc.object();
+
+    QString fullName = obj.value("full_name").toString();
+    QString rank = obj.value("rank").toString();
+    QString position = obj.value("position").toString();
+    QString subdivisionId = obj.value("subdivision_id").toString();
+
+    m_dbManager.signUp(fullName, rank, position, subdivisionId);
+    m_dbManager.exportDataToJson();
+}
+
+void CommandsServer::createMilitaryUnit() {
+    QFile file("C:/Ak-74Utilities/Data/CreateMilUnitData.json");
+
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qWarning() << "Failed to open JSON file:" << file.errorString();
+        return;
+    }
+
+    QByteArray jsonData = file.readAll();
+    file.close();
+
+    QJsonParseError parseError;
+    QJsonDocument doc = QJsonDocument::fromJson(jsonData, &parseError);
+
+    if (doc.isNull() || !doc.isObject()) {
+        qWarning() << "Invalid JSON format:" << parseError.errorString();
+        return;
+    }
+
+    QJsonObject obj = doc.object();
+
+    QString militaryUnitNumber = obj.value("number").toString();
+    m_dbManager.createMilitaryUnit(militaryUnitNumber);
+    m_dbManager.exportDataToJson();
+}
+
+void CommandsServer::createDivision() {
+    QFile file("C:/Ak-74Utilities/Data/CreateDivisionData.json");
+
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qWarning() << "Failed to open JSON file:" << file.errorString();
+        return;
+    }
+
+    QByteArray jsonData = file.readAll();
+    file.close();
+
+    QJsonParseError parseError;
+    QJsonDocument doc = QJsonDocument::fromJson(jsonData, &parseError);
+
+    if (doc.isNull() || !doc.isObject()) {
+        qWarning() << "Invalid JSON format:" << parseError.errorString();
+        return;
+    }
+
+    QJsonObject obj = doc.object();
+
+    QString militaryUnitId = obj.value("military_unit_id").toString();
+    QString divisionName = obj.value("name").toString();
+
+    m_dbManager.createDivision(divisionName, militaryUnitId);
+    m_dbManager.exportDataToJson();
+}
+
+void CommandsServer::createSubdivision() {
+    QFile file("C:/Ak-74Utilities/Data/CreateSubdivisionData.json");
+
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qWarning() << "Failed to open JSON file:" << file.errorString();
+        return;
+    }
+
+    QByteArray jsonData = file.readAll();
+    file.close();
+
+    QJsonParseError parseError;
+    QJsonDocument doc = QJsonDocument::fromJson(jsonData, &parseError);
+
+    if (doc.isNull() || !doc.isObject()) {
+        qWarning() << "Invalid JSON format:" << parseError.errorString();
+        return;
+    }
+
+    QJsonObject obj = doc.object();
+
+    QString subdivisionName = obj.value("name").toString();
+    QString divisionId = obj.value("division_id").toString();
+
+    m_dbManager.createSubdivision(subdivisionName, divisionId);
+    m_dbManager.exportDataToJson();
 }

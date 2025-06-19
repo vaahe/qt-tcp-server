@@ -1,6 +1,7 @@
 C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/qt-tcp-server_autogen/L7BENV5DLJ/moc_commands-server.cpp: C:/Users/User/Documents/qt-tcp-server/src/servers/commands-server/commands-server.h \
   C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/qt-tcp-server_autogen/moc_predefs.h \
   C:/Qt/6.7.1/mingw_64/include/QtCore/QByteArray \
+  C:/Qt/6.7.1/mingw_64/include/QtCore/QDate \
   C:/Qt/6.7.1/mingw_64/include/QtCore/QDebug \
   C:/Qt/6.7.1/mingw_64/include/QtCore/QDir \
   C:/Qt/6.7.1/mingw_64/include/QtCore/QFile \

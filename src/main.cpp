@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 
     if (dbManager.isConnected()) {
         dbManager.seedMockData();
-        dbManager.exportDataToJson("C:\\Shoot\\data.json");
+        dbManager.exportDataToJson();
     }
 
     QTranslator translator;

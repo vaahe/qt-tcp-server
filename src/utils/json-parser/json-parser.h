@@ -60,7 +60,7 @@ public:
      */
     static bool writeJsonToFile(const QString &filePath, const QJsonObject &root, QString &errorString);
 
-    static DatabaseManager::QueryFilter parseQueryFilter(const QString& filePath, QJsonDocument &jsonDoc, QString &errorString);
+    // static DatabaseManager::QueryFilter parseQueryFilter(const QString& filePath, QJsonDocument &jsonDoc, QString &errorString);
 };
 
 #endif // JSONPARSER_H
