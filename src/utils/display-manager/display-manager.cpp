@@ -44,3 +44,7 @@ void DisplayManager::showOnSecondaryDisplay(QWidget *window) {
 QSize DisplayManager::secondaryDisplaySize() const {
     return m_screens.at(1)->size();
 }
+
+QSize DisplayManager::primaryDisplaySize() const {
+    return m_screens.at(0)->size();
+}

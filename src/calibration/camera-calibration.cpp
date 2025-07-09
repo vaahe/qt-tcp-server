@@ -38,6 +38,8 @@ void CameraCalibration::startCalibration() {
 
     if (!m_cap.isOpened()) {
         qDebug() << "Error: Camera is not opened";
+        emit calibrationFailed("Camera not opened");
+        emit calibrationFinished();
         return;
     }
 
@@ -45,16 +47,18 @@ void CameraCalibration::startCalibration() {
     loadCalibrationData(calibrationFilePath);
 
     emit calibrationStarted();
+
+    m_httpClient->applyCalibrationSettings();
     while (!m_pointsCaptured) {
         cv::Mat frame, undistortedFrame;
         m_cap >> frame;
 
         if (frame.empty()) {
             qDebug() << "Error: Empty frame captured";
+            emit calibrationFailed("Empty frame");
             break;
         }
 
-        m_httpClient->applyCalibrationSettings();
         cv::undistort(frame, undistortedFrame, m_cameraMatrix, m_distortionCoefficients);
         processFrame(undistortedFrame);
 
@@ -63,6 +67,7 @@ void CameraCalibration::startCalibration() {
         }
     }
 
+    stopCalibration();
     cv::destroyAllWindows();
     emit calibrationFinished();
 }
@@ -80,7 +85,7 @@ void CameraCalibration::openCamera() {
         return;
     }
 
-    bool isConnected = m_cap.open("rtsp://admin:123456789m@ 192.168.1.64:554/Streaming/Channels/102");
+    bool isConnected = m_cap.open("rtsp://admin:123456789m@192.168.1.64:554/Streaming/Channels/102");
 
     if (!isConnected || !m_cap.isOpened()) {
         qDebug() << "Error: Couldn't open camera. Please check the connection or the RTSP URL.";
@@ -249,8 +254,10 @@ cv::Mat CameraCalibration::warpFrame(const cv::Mat& frame)
 
 void CameraCalibration::showCalibrationImage() {
     if (displayManager.hasMultipleDisplays()) {
-
         m_calibrationImageWidget->setWindowTitle("Calibration Image");
+        m_calibrationImageWidget->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
+        m_calibrationImageWidget->setAttribute(Qt::WA_TranslucentBackground);
+        m_calibrationImageWidget->setAttribute(Qt::WA_NoSystemBackground, false);
 
         const QString backgroundImagePath = ":/images/images/background1.png";
         QPixmap pixmap(backgroundImagePath);
@@ -268,7 +275,7 @@ void CameraCalibration::showCalibrationImage() {
         backgroundLabel->setScaledContents(true);
         backgroundLabel->setGeometry(0, 0, displaySize.width(), displaySize.height());
 
-        displayManager.showOnPrimaryDisplay(m_calibrationImageWidget);
+        displayManager.showOnSecondaryDisplay(m_calibrationImageWidget);
     } else {
         qDebug() << "Only one display detected. Unable to show on secondary display.";
     }

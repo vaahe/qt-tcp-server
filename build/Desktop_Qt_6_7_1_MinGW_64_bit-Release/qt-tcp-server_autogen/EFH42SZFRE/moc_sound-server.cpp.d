@@ -1,5 +1,6 @@
 C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/qt-tcp-server_autogen/EFH42SZFRE/moc_sound-server.cpp: C:/Users/User/Documents/qt-tcp-server/src/servers/sound-server/sound-server.h \
   C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/qt-tcp-server_autogen/moc_predefs.h \
+  C:/Qt/6.7.1/mingw_64/include/QtCore/QList \
   C:/Qt/6.7.1/mingw_64/include/QtCore/QObject \
   C:/Qt/6.7.1/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.7.1/mingw_64/include/QtCore/q20memory.h \

@@ -10,9 +10,17 @@ class CoordinatesServer : public BaseTcpServer
 {
     Q_OBJECT
 
-public:
-    explicit CoordinatesServer(quint16 port, QObject* parent = nullptr);
+private:
+    explicit CoordinatesServer(quint16 port = 3000, QObject* parent = nullptr);
     ~CoordinatesServer() override;
+
+public:
+    static CoordinatesServer& getInstance() {
+        static CoordinatesServer instance;
+        return instance;
+    }
+
+    void sendToAllClients(const QByteArray& data);
 
 protected:
     void onDataReceived(QTcpSocket* client, const QByteArray& data) override;

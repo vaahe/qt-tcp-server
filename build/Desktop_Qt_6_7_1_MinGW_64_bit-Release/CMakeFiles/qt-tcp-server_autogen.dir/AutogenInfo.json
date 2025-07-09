@@ -338,6 +338,16 @@
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6SerialPort/Qt6SerialPortTargets-relwithdebinfo.cmake",
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6SerialPort/Qt6SerialPortAdditionalTargetInfo.cmake",
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6SerialPort/Qt6SerialPortVersionlessTargets.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportConfigVersion.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportConfigVersionImpl.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportConfig.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportDependencies.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportTargets.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportAdditionalTargetInfo.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportVersionlessTargets.cmake",
+		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportPlugins.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/GNUInstallDirs.cmake",
 		"C:/Users/User/Documents/qt-tcp-server/resources/application.qrc"
 	],
@@ -480,6 +490,12 @@
 			null
 		],
 		[
+			"C:/Users/User/Documents/qt-tcp-server/src/utils/printer-manager/printermanager.h",
+			"MU",
+			"RTM4I7IFRS/moc_printermanager.cpp",
+			null
+		],
+		[
 			"C:/Users/User/Documents/qt-tcp-server/src/widgets/debug-widget/debug-widget.h",
 			"MU",
 			"EO77ZZ5MGM/moc_debug-widget.cpp",
@@ -509,6 +525,7 @@
 		"QT_NEEDS_QMAIN",
 		"QT_NETWORK_LIB",
 		"QT_NO_DEBUG",
+		"QT_PRINTSUPPORT_LIB",
 		"QT_SERIALPORT_LIB",
 		"QT_SQL_LIB",
 		"QT_WIDGETS_LIB",
@@ -555,6 +572,7 @@
 		"C:/Qt/6.7.1/mingw_64/include/QtSql",
 		"C:/Qt/6.7.1/mingw_64/include/QtNetwork",
 		"C:/Qt/6.7.1/mingw_64/include/QtSerialPort",
+		"C:/Qt/6.7.1/mingw_64/include/QtPrintSupport",
 		"C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++",
 		"C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32",
 		"C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward",
@@ -647,12 +665,22 @@
 			null
 		],
 		[
+			"C:/Users/User/Documents/qt-tcp-server/src/servers/sound-server/sound-server.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/Users/User/Documents/qt-tcp-server/src/utils/display-manager/display-manager.cpp",
 			"MU",
 			null
 		],
 		[
 			"C:/Users/User/Documents/qt-tcp-server/src/utils/json-parser/json-parser.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/User/Documents/qt-tcp-server/src/utils/printer-manager/printermanager.cpp",
 			"MU",
 			null
 		],

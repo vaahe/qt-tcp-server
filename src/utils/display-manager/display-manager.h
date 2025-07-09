@@ -15,7 +15,9 @@ public:
     void showOnDisplay(QWidget*, int);
     void showOnPrimaryDisplay(QWidget*);
     void showOnSecondaryDisplay(QWidget*);
+
     QSize secondaryDisplaySize() const;
+    QSize primaryDisplaySize() const;
 
 private:
     QList<QScreen*> m_screens;

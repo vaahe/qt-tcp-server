@@ -37,23 +37,23 @@ int main(int argc, char *argv[])
     mainController.setWindowState(Qt::WindowMaximized);
     mainController.show();
 
-    CoordinatesServer coordinatesServer(3000);
-    SoundServer soundServer(3001);
+    CoordinatesServer &coordinatesServer = CoordinatesServer::getInstance();
+    SoundServer &soundServer = SoundServer::getInstance();
     CommandsServer commandsServer(3002);
-    SensorServer sensorServer(3003);
+    // SensorServer sensorServer(3003);
 
-    // Client* coordinatesClient = new Client("127.0.0.1", coordinatesServer.m_port, &app);
-    // Client* soundClient = new Client("127.0.0.1", soundServer.m_port, &app);
+    Client* coordinatesClient = new Client("127.0.0.1", coordinatesServer.m_port, &app);
+    Client* soundClient = new Client("127.0.0.1", soundServer.m_port, &app);
     Client* commandsClient = new Client("127.0.0.1", commandsServer.m_port, &app);
     // Client* sensorClient = new Client("127.0.0.1", sensorServer.m_port, &app);
 
-    // QObject::connect(coordinatesClient, &Client::dataReceived, &app,[](const QByteArray&){
-    //     qDebug() << "Received from CoordinatesServer";
-    // });
+    QObject::connect(coordinatesClient, &Client::dataReceived, &app,[](const QByteArray&){
+        qDebug() << "Received from CoordinatesServer";
+    });
 
-    // QObject::connect(soundClient, &Client::dataReceived, &app, [](const QByteArray&){
-    //     qDebug() << "Received from SoundServer";
-    // });
+    QObject::connect(soundClient, &Client::dataReceived, &app, [](const QByteArray&){
+        qDebug() << "Received from SoundServer";
+    });
 
     QObject::connect(commandsClient, &Client::dataReceived, &app, [](const QByteArray&){
         qDebug() << "Received from CommandsServer";

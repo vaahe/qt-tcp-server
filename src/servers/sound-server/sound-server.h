@@ -7,19 +7,20 @@ class SoundServer : public BaseTcpServer
 {
     Q_OBJECT
 
-public:
-    explicit SoundServer(quint16 port, QObject* parent = nullptr) : BaseTcpServer(port, parent) {
-        QObject::connect(this, &BaseTcpServer::dataReceived, this, &SoundServer::onDataReceived);
-
-        if (!this->connect()) {
-            qFatal("EchoServer failed to listen on port %u", port);
-        }
-    }
+private:
+    explicit SoundServer(quint16 port = 3001, QObject* parent = nullptr);
+    ~SoundServer() override;
 
 public:
-    void onDataReceived(QTcpSocket* client, const QByteArray& data) {
-        send(client, data); // send data back to client
+    static SoundServer& getInstance() {
+        static SoundServer instance;
+        return instance;
     }
+
+    void sendToAllClients(const QByteArray& data);
+
+protected:
+    void onDataReceived(QTcpSocket* client, const QByteArray& data) override;
 };
 
 #endif // SOUND_SERVER_H

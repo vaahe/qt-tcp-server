@@ -58,6 +58,7 @@ public:
     bool createSubdivision(const QString subdivisionName, const QString divisionId);
     bool createMilitaryUnit(const QString militaryUnitNumber);
 
+    bool saveResult(QString userId, QString date, QString grade, QString screenshotFolder);
     void seedMockData();
     // bool exportDataToCSV(const QString& filePath, const QueryFilter& filter = QueryFilter());
     void exportDataToJson(const QString &filePath = "C:/Ak-74Utilities/Data/MainData.json");

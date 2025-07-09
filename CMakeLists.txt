@@ -15,10 +15,10 @@ find_package(OpenCV 4.8 REQUIRED)
 
 # Find Qt modules
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS
-    Widgets LinguistTools Sql Network SerialPort
+    Widgets LinguistTools Sql Network SerialPort PrintSupport
 )
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS
-    Widgets LinguistTools Sql Network SerialPort
+    Widgets LinguistTools Sql Network SerialPort PrintSupport
 )
 
 # List all your sources here
@@ -89,7 +89,9 @@ if (QT_VERSION_MAJOR GREATER_EQUAL 6)
         src/models/military-unit/MilitaryUnit.h
         src/models/result/Result.h
         src/models/subdivision/Subdivision.h
-        src/models/user/User.h)
+        src/models/user/User.h
+        src/servers/sound-server/sound-server.cpp
+        src/utils/printer-manager/printermanager.h src/utils/printer-manager/printermanager.cpp)
 else()
     add_executable(qt-tcp-server
         ${PROJECT_SOURCES}
@@ -111,6 +113,7 @@ target_link_libraries(qt-tcp-server
         Qt${QT_VERSION_MAJOR}::Sql
         Qt${QT_VERSION_MAJOR}::Network
         Qt${QT_VERSION_MAJOR}::SerialPort
+        Qt${QT_VERSION_MAJOR}::PrintSupport
 )
 
 # 4) Translations

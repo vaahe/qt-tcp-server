@@ -7,17 +7,18 @@ FrameProcessor::~FrameProcessor() {
     std::cout << "Training worker instance is destoryed" << std::endl;
 }
 
-
 void FrameProcessor::startProcessing() {
+
     m_cap.open("rtsp://admin:123456789m@192.168.1.64:554/Streaming/Channels/102");
 
     if (!m_cap.isOpened()) {
-        std::cerr << "Error: Could not open video stream." << std::endl;        
+        std::cerr << "Error: Could not open video stream." << std::endl;
         return;
     }
 
     loadCalibrationData(":data/data/calibration_results.xml");
     m_stopProcessing = false;
+
     emit processingStarted();
 
     cv::Mat frame, undistortedFrame, gray;
@@ -45,7 +46,7 @@ void FrameProcessor::startProcessing() {
         cv::minMaxLoc(gray, &minVal, &maxVal, &minLoc, &maxLoc);
 
         if (maxVal > 100) {
-            m_cap.read(undistortedFrame);
+            m_cap.read(undistortedFrame); // optional second read?
 
             serializePointToByteArray(maxLoc);
             emit trajectoryPointSent(maxLoc);
@@ -55,7 +56,6 @@ void FrameProcessor::startProcessing() {
     m_cap.release();
     emit processingFinished();
 }
-
 
 void FrameProcessor::stopProcessing() {
     m_stopProcessing = true;
@@ -87,10 +87,20 @@ void FrameProcessor::serializePointToByteArray(const cv::Point& point) {
 }
 
 void FrameProcessor::loadCalibrationData(const QString& resourcePath) {
-    cv::FileStorage fs(resourcePath.toStdString(), cv::FileStorage::READ);
+    QFile file(resourcePath);
+    if (!file.open(QIODevice::ReadOnly)) {
+        qCritical() << "Error: Could not open the Qt resource file for reading.";
+        exit(-1);
+    }
+
+    QByteArray fileData = file.readAll();
+    file.close();
+
+    // OpenCV can read from memory using cv::FileStorage::MEMORY
+    cv::FileStorage fs(fileData.toStdString(), cv::FileStorage::READ | cv::FileStorage::MEMORY);
 
     if (!fs.isOpened()) {
-        qCritical() << "Error: Could not open the resource file for reading calibration data.";
+        qCritical() << "Error: OpenCV FileStorage could not parse memory content.";
         exit(-1);
     }
 
@@ -103,5 +113,4 @@ void FrameProcessor::loadCalibrationData(const QString& resourcePath) {
     }
 
     qDebug() << "Calibration data loaded successfully.";
-    fs.release();
 }

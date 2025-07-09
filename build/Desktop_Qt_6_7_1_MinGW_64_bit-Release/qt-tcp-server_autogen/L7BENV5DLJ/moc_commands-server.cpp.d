@@ -541,8 +541,11 @@ C:/Users/User/Documents/qt-tcp-server/build/Desktop_Qt_6_7_1_MinGW_64_bit-Releas
   C:/Users/User/Documents/qt-tcp-server/src/models/user/User.h \
   C:/Users/User/Documents/qt-tcp-server/src/processing/frame-processor.h \
   C:/Users/User/Documents/qt-tcp-server/src/servers/base-tcp-server/base-tcp-server.h \
+  C:/Users/User/Documents/qt-tcp-server/src/servers/coordinates-server/coordinates-server.h \
+  C:/Users/User/Documents/qt-tcp-server/src/servers/sound-server/sound-server.h \
   C:/Users/User/Documents/qt-tcp-server/src/utils/display-manager/display-manager.h \
   C:/Users/User/Documents/qt-tcp-server/src/utils/globals-manager/globals-manager.h \
+  C:/Users/User/Documents/qt-tcp-server/src/utils/printer-manager/printermanager.h \
   C:/Users/User/Documents/qt-tcp-server/src/widgets/debug-widget/debug-widget.h \
   C:/Users/User/Downloads/opencv/build/opencv2/opencv_modules.hpp \
   C:/Users/User/Downloads/opencv/sources/include/opencv2/opencv.hpp \

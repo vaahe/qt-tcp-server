@@ -455,6 +455,15 @@ qt-tcp-server_autogen/timestamp: \
 	C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake \
 	C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake \
 	C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake \
+	C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportAdditionalTargetInfo.cmake \
+	C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportConfig.cmake \
+	C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportConfigVersion.cmake \
+	C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportConfigVersionImpl.cmake \
+	C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportDependencies.cmake \
+	C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportPlugins.cmake \
+	C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportTargets-relwithdebinfo.cmake \
+	C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportTargets.cmake \
+	C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportVersionlessTargets.cmake \
 	C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6SerialPort/Qt6SerialPortAdditionalTargetInfo.cmake \
 	C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6SerialPort/Qt6SerialPortConfig.cmake \
 	C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6SerialPort/Qt6SerialPortConfigVersion.cmake \
@@ -838,12 +847,15 @@ qt-tcp-server_autogen/timestamp: \
 	C:/Users/User/Documents/qt-tcp-server/src/servers/coordinates-server/coordinates-server.h \
 	C:/Users/User/Documents/qt-tcp-server/src/servers/sensor-server/sensor-server.cpp \
 	C:/Users/User/Documents/qt-tcp-server/src/servers/sensor-server/sensor-server.h \
+	C:/Users/User/Documents/qt-tcp-server/src/servers/sound-server/sound-server.cpp \
 	C:/Users/User/Documents/qt-tcp-server/src/servers/sound-server/sound-server.h \
 	C:/Users/User/Documents/qt-tcp-server/src/utils/display-manager/display-manager.cpp \
 	C:/Users/User/Documents/qt-tcp-server/src/utils/display-manager/display-manager.h \
 	C:/Users/User/Documents/qt-tcp-server/src/utils/globals-manager/globals-manager.h \
 	C:/Users/User/Documents/qt-tcp-server/src/utils/json-parser/json-parser.cpp \
 	C:/Users/User/Documents/qt-tcp-server/src/utils/json-parser/json-parser.h \
+	C:/Users/User/Documents/qt-tcp-server/src/utils/printer-manager/printermanager.cpp \
+	C:/Users/User/Documents/qt-tcp-server/src/utils/printer-manager/printermanager.h \
 	C:/Users/User/Documents/qt-tcp-server/src/widgets/debug-widget/debug-widget.cpp \
 	C:/Users/User/Documents/qt-tcp-server/src/widgets/debug-widget/debug-widget.h \
 	C:/Users/User/Documents/qt-tcp-server/src/widgets/results-widget/results-widget.cpp \

@@ -1,6 +1,7 @@
 #ifndef BASESERVER_H
 #define BASESERVER_H
 
+#include <QList>
 #include <QObject>
 #include <QTcpServer>
 #include <QTcpSocket>
@@ -40,6 +41,9 @@ private:
     QList<QTcpSocket*> m_clients;
 
     DebugWidget &m_debugWidget = DebugWidget::getInstance();
+
+protected:
+    const QList<QTcpSocket*>& clients() const { return m_clients; }
 
 public:
     quint16 m_port;

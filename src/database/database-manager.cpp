@@ -517,3 +517,26 @@ bool DatabaseManager::createSubdivision(const QString subdivisionName, const QSt
 
     return true;
 }
+
+// "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+//     "user_id INTEGER NOT NULL,"
+//     "date TEXT,"
+//     "grade TEXT,"
+//     "screenshots TEXT,"
+
+bool DatabaseManager::saveResult(QString userId, QString date, QString grade, QString screenshotFolder) {
+    QSqlQuery query;
+    query.prepare("INSERT INTO results(user_id, date, grade, screenshots) VALUES (:user_id, :date, :grade, :screenshots)");
+
+    query.bindValue(":user_id", userId);
+    query.bindValue(":date", date);
+    query.bindValue(":grade", grade);
+    query.bindValue(":screenshots", screenshotFolder);
+
+    if (!query.exec()) {
+        qDebug() << "Error inserting result:" << query.lastError().text();
+        return false;
+    }
+
+    return true;
+}

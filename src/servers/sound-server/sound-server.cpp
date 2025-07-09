@@ -1,11 +1,11 @@
-#include "coordinates-server.h"
+#include "sound-server.h"
 #include <QDebug>
 
-CoordinatesServer::CoordinatesServer(quint16 port, QObject* parent) : BaseTcpServer(port, parent) {}
+SoundServer::SoundServer(quint16 port, QObject* parent) : BaseTcpServer(port, parent) {}
 
-CoordinatesServer::~CoordinatesServer() {}
+SoundServer::~SoundServer() {}
 
-void CoordinatesServer::onDataReceived(QTcpSocket* client, const QByteArray& data) {
+void SoundServer::onDataReceived(QTcpSocket* client, const QByteArray& data) {
     const QString cmd = QString::fromUtf8(data).trimmed();
 
     qDebug() << "[CommandsServer] Received from" << client->peerAddress().toString() << ":" << cmd;
@@ -13,7 +13,7 @@ void CoordinatesServer::onDataReceived(QTcpSocket* client, const QByteArray& dat
     send(client, data);
 }
 
-void CoordinatesServer::sendToAllClients(const QByteArray& data) {
+void SoundServer::sendToAllClients(const QByteArray& data) {
     for (QTcpSocket* client : clients()) {
         if (client->state() == QAbstractSocket::ConnectedState) {
             client->write(data);
